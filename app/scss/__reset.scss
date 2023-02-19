@@ -10,3 +10,13 @@
 	text-decoration: none;
 }
 
+html {
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	font-family: 'Roboto', sans-serif;
+	background-color: $black;
+}

@@ -1,0 +1,1 @@
+const headerVideo=document.querySelectorAll(".header__video");for(let e=0;e<headerVideo.length;e++)headerVideo[e].addEventListener("mouseenter",function(d){headerVideo[e].play()}),headerVideo[e].addEventListener("mouseout",function(d){headerVideo[e].pause()});
