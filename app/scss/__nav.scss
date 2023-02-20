@@ -1,0 +1,205 @@
+.nav {
+	position: fixed;
+	top: 0;
+	padding: 0 1em;
+	width: 100%;
+	background-color: $black;
+	z-index: 100000000000;
+
+	@include respond(desktop-small) {
+		border-bottom: 4px solid $orange;
+	}
+
+	&__overlay {
+		position: absolute;
+		right: 0;
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out, visibility 0.3s;
+		background-color: rgba($color: #000000, $alpha: 0.5);
+		width: 100vw;
+		height: 100vh;
+
+		@include respond(tablet) {
+			display: none;
+		}
+	}
+
+	&__overlay.active {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	&__brand {
+		width: 150px;
+		height: 70px;
+	}
+
+	&__logo {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__btn {
+		z-index: 9999;
+		transition: background-color 0.2s;
+		cursor: pointer;
+		border: none;
+		background-color: transparent;
+		padding: 0.5em;
+
+		@include respond(desktop-small) {
+			display: none;
+		}
+
+		&:hover {
+			background-color: $orange;
+		}
+
+		&:hover &-bars,
+		&:hover &-bars::after,
+		&:hover &-bars::before {
+			background-color: $black;
+			width: 100%;
+		}
+
+		&-box {
+			position: relative;
+			width: 30px;
+			height: 20px;
+		}
+
+		&-bars {
+			position: absolute;
+			top: 0;
+			right: 0;
+			transition: background-color 0.2s;
+			background-color: $snowy;
+			width: 100%;
+			height: 2px;
+			content: '';
+
+			&::after,
+			&::before {
+				position: absolute;
+				right: 0;
+				background-color: $snowy;
+				height: 2px;
+				content: '';
+			}
+
+			&::after {
+				top: 8px;
+				transition: width 0.4s, background-color 0.2s;
+				width: 45%;
+			}
+
+			&::before {
+				top: 16px;
+				transition: width 0.5s, background-color 0.2s;
+				width: 65%;
+			}
+		}
+
+		&.active {
+			.nav__btn-bars,
+			.nav__btn-bars::after,
+			.nav__btn-bars::before {
+				background-color: $black;
+				width: 100%;
+			}
+		}
+	}
+
+	&__btn.active {
+		background-color: $orange;
+	}
+
+	&__navbar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__list {
+		display: flex;
+		position: absolute;
+		top: 0;
+		right: 0;
+		flex-direction: column;
+		justify-content: center;
+		transform: translateX(100%);
+		transition: transform 0.5s;
+		border-left: 3px solid $orange;
+		background-color: $black;
+		width: 55vw;
+		height: 100vh;
+
+		@include respond(mobile) {
+			width: 45vw;
+		}
+
+		@include respond(desktop-small) {
+			position: relative;
+			flex-direction: row;
+			transform: translateX(0);
+			height: inherit;
+			width: inherit;
+			border-left: none;
+		}
+	}
+
+	&__list.active {
+		transform: translateX(0);
+	}
+
+	&__item {
+		position: relative;
+		transition: padding-left 0.2s, background-color 0.2s;
+		padding: 1em;
+		padding-left: 1.5em;
+		color: $snowy;
+		font-weight: 700;
+		text-transform: uppercase;
+
+		@include respond(desktop-small) {
+			padding: 0.4em;
+			border: 2px solid $orange;
+			margin-inline: 0.25em;
+			transition: color 0.2s, border 0.2s, background-color 0.2s;
+			font-size: $tablet-text;
+		}
+
+		&:hover {
+			background-color: rgba($color: black, $alpha: 0.5);
+			padding-left: 2em;
+
+			&::before {
+				width: 4px;
+			}
+
+			@include respond(desktop-small) {
+				padding: 0.4em;
+				background-color: $snowy;
+				border: 2px solid $snowy;
+				color: $black;
+			}
+		}
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 10px;
+			background-color: $orange;
+			width: 2px;
+			height: 100%;
+			content: '';
+			transition: width 0.2s;
+
+			@include respond(desktop-small) {
+				display: none;
+			}
+		}
+	}
+}

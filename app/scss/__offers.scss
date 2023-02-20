@@ -1,0 +1,102 @@
+.offers {
+	&__cards {
+		display: flex;
+		flex-direction: column;
+
+		@include respond(tablet) {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: 1fr;
+			grid-column-gap: 0px;
+			grid-row-gap: 0px;
+		}
+	}
+
+	&__card {
+		position: relative;
+		width: 100%;
+		height: 300px;
+		overflow: hidden;
+
+		&::after {
+			position: absolute;
+			content: '';
+			background-color: rgba($color: black, $alpha: 0.7);
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			transition: background-color 0.2s;
+		}
+
+		&:hover::after {
+			background-color: rgba($color: $black, $alpha: 0.5);
+		}
+
+		&:hover .offers__img {
+			transform: scale(1.1);
+		}
+	}
+
+	&__img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		bottom: 0;
+		object-fit: cover;
+		transition: transform 0.2s;
+	}
+
+	&__info {
+		position: absolute;
+		left: 15px;
+		bottom: 50px;
+		z-index: 50;
+		display: flex;
+		flex-direction: column;
+		gap: 0.25em;
+		align-items: flex-start;
+
+		&-description {
+			text-shadow: 0px 5px 5px rgba($color: black, $alpha: 0.8);
+			color: $snowy;
+			text-transform: uppercase;
+
+			@include respond(desktop-small) {
+				font-size: $tablet-text;
+			}
+		}
+
+		&-title {
+			text-transform: uppercase;
+			text-shadow: 0px 5px 5px rgba($color: black, $alpha: 0.8);
+			color: $snowy;
+
+			@include respond(tablet) {
+				font-size: $desktop-text;
+			}
+
+			@include respond(desktop-large) {
+				font-size: 3rem;
+			}
+		}
+
+		&-btn {
+			background-color: $orange;
+			padding: 0.4em 0.8em;
+			text-transform: uppercase;
+			color: $black;
+			font-weight: 700;
+			transition: background-color 0.2s;
+
+			@include respond(desktop-small) {
+				font-size: $tablet-text;
+			}
+
+			&:hover {
+				background-color: $snowy;
+			}
+		}
+	}
+}

@@ -1,0 +1,163 @@
+.featured-events {
+	@include section-padding;
+
+	&__cards {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		row-gap: 1em;
+
+		@include respond(tablet) {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: 1fr;
+			grid-column-gap: 1em;
+			grid-row-gap: 1em;
+		}
+	}
+
+	&__card {
+		width: 100%;
+		height: 100%;
+		background-color: rgba($color: #000000, $alpha: 0.3);
+		border-radius: 8px;
+		color: $snowy;
+		text-transform: uppercase;
+		overflow: hidden;
+		position: relative;
+		box-shadow: 0px 0px 16px -5px rgba(0, 0, 0, 1);
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			left: 0;
+			background-color: $orange;
+			height: 5px;
+		}
+
+		&-body {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+		}
+
+		&-top,
+		&-bottom {
+			display: flex;
+			align-items: center;
+			padding: 1em;
+		}
+
+		&-dates {
+			text-align: center;
+		}
+
+		&-day {
+			font-weight: 700;
+		}
+
+		&-month {
+			font-size: 1.3rem;
+		}
+
+		&-span {
+			display: block;
+			width: 2px;
+			background-color: $orange;
+			height: 50px;
+			margin: 0.5em;
+		}
+
+		&-title {
+			font-weight: 700;
+			font-size: $tablet-text;
+
+			@include respond(desktop) {
+				font-size: $desktop-text;
+			}
+		}
+
+		&-bottom {
+			justify-content: space-between;
+			padding-block: 1.3em;
+		}
+
+		&-socials {
+			display: flex;
+			align-items: center;
+			gap: 0.7em;
+		}
+
+		&-link {
+			color: $black;
+			background-color: transparent;
+			border: 2px solid $orange;
+			color: $snowy;
+			padding: 0.4em 0.8em;
+			font-weight: 700;
+			transition: background-color 0.2s, color 0.2s, border 0.2s;
+
+			@include respond(desktop-small) {
+				font-size: $tablet-text;
+			}
+
+			&:hover {
+				background-color: $snowy;
+				color: $black;
+				border: 2px solid $snowy;
+			}
+		}
+
+		&-btn {
+			padding: 0.5em;
+			border-radius: 50%;
+			background-color: transparent;
+			border: 2px solid $orange;
+			color: $orange;
+			font-weight: 700;
+			display: flex;
+			align-items: center;
+			font-size: 1.75rem;
+			transition: background-color 0.2s, color 0.2s, transform 0.2s;
+
+			&:hover {
+				transform: scale(1.2);
+				background-color: $orange;
+				color: $black;
+			}
+		}
+
+		&-img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: cover;
+		}
+	}
+
+	&__btn {
+		margin-block: 1.5em;
+		margin-inline: auto;
+		display: block;
+		padding: 0.5em 0.8em;
+		background-color: transparent;
+		text-transform: uppercase;
+		color: $snowy;
+		font-weight: 700;
+		max-width: 400px;
+		text-align: center;
+		border: 2px solid $snowy;
+		transition: background-color 0.2s, color 0.2s;
+
+		&:hover {
+			background-color: $snowy;
+			color: $black;
+		}
+
+		@include respond(desktop-small) {
+			font-size: $tablet-text;
+		}
+	}
+}
