@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Azardi
+ * @package Mango
  */
 get_header();
 ?>
