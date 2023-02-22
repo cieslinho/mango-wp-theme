@@ -687,6 +687,101 @@ body {
     padding: 3em 0;
   }
 }
+.contact__boxes {
+  display: flex;
+  flex-direction: column;
+}
+.contact__box {
+  padding: 1em;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0px 0px 16px -5px rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.contact__form {
+  display: flex;
+  flex-direction: column;
+}
+.contact__form-row {
+  display: flex;
+}
+.contact__form-field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 50%;
+  margin: 1em;
+}
+.contact__form-field-textarea {
+  width: inherit;
+}
+.contact__label {
+  position: absolute;
+  text-transform: uppercase;
+  top: -15px;
+  letter-spacing: 1px;
+  color: rgba(244, 244, 244, 0.8);
+  font-size: 1.35rem;
+}
+@media only screen and (min-width: 768px) {
+  .contact__label {
+    font-size: 1.5rem;
+  }
+}
+.contact__input, .contact__textarea {
+  margin-top: 1em;
+  padding: 0.8em;
+  outline: none;
+  background: none;
+  border: none;
+  width: 100%;
+  border-bottom: 2px solid rgba(255, 140, 50, 0.5);
+  font-family: "Roboto", sans-serif;
+  color: rgba(255, 140, 50, 0.5);
+  transition: color 0.2s, border-bottom 0.2s, background-color 0.2s;
+  display: block;
+}
+@media only screen and (min-width: 360px) {
+  .contact__input, .contact__textarea {
+    font-size: 1.6rem;
+  }
+}
+.contact__input:focus, .contact__textarea:focus {
+  color: #FF8C32;
+  background-color: rgba(244, 244, 244, 0.009);
+  border-bottom: 2px solid #FF8C32;
+}
+@media only screen and (min-width: 768px) {
+  .contact__input, .contact__textarea {
+    font-size: 1.8rem;
+  }
+}
+.contact__textarea {
+  resize: vertical;
+  width: 100%;
+  margin-bottom: 2em;
+  min-height: 300px;
+}
+.contact__btn {
+  padding: 1em;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #191A19;
+  background-color: #FF8C32;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border: none;
+}
+.contact__btn:hover {
+  background-color: #F4F4F4;
+}
+@media only screen and (min-width: 768px) {
+  .contact__btn {
+    align-self: flex-end;
+    width: 30%;
+  }
+}
 
 .residents {
   padding: 1em 0;
@@ -756,6 +851,7 @@ body {
 .residents__card-title {
   text-transform: uppercase;
   color: #F4F4F4;
+  letter-spacing: 2px;
   text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.8);
 }
 .residents__card-socials {
