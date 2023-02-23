@@ -42,6 +42,7 @@ var swiperSecond = new Swiper('.residents__cards-swiper', {
 	},
 	centeredSlides: true,
 	loop: true,
+	// rewind: true,
 	autoplay: {
 		delay: 2500,
 		disableOnInteraction: false,

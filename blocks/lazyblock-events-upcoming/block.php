@@ -1,8 +1,8 @@
 <section class="featured-events">
     <div class="container">
-        <h2 class="section-title"><span>wyróżnione</span></h2>
+        <h2 class="section-title"><span>wszystkie wydarzenia</span></h2>
         <div class="featured-events__cards">
-        <?php forEach( $attributes['events'] as $event) : ?>
+        <?php forEach( $attributes['events-upcoming'] as $event) : ?>
             <div class="featured-events__card">
                 <div class="featured-events__card-body">
                     <div class="featured-events__card-top">
@@ -29,5 +29,4 @@
             </div>
             <?php endforeach; ?>
     </div>
-    <a href="/wydarzenia" class="featured-events__btn">zobacz więcej</a>
 </section>

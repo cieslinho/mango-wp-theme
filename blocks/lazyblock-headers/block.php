@@ -1,6 +1,6 @@
 <div class="headers">
     <div class="headers__box">
-        <video autoplay muted loop src="<?php echo get_template_directory_uri(); ?>/assets/videos/klub1.mp4" class="headers__video"></video>
+        <video autoplay muted loop src="<?php echo esc_url( $attributes['video']['url'] ); ?>" class="headers__video"></video>
         <div class="headers__texts">
             <h1 class="headers__title">Mango Music Club</h1>
             <p class="headers__text">Imprezowe serce miasta Opole.</p>

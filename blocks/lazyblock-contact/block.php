@@ -1,8 +1,20 @@
 <section id="contact" class="contact">
     <div class="container">
         <h2 class="section-title"><span>kontakt</span></h2>
-        <div class="contact__boxes">
             <div class="contact__box">
+                <div class="contact__info">
+                    <h3 class="contact__info-title">chcesz o coś zapytać?</h3>
+                    <p class="contact__info-text">napisz do nas!</p>
+                    <p class="contact__info-text">skorzystaj z poniższych opcji lub wyślij zapytanie za pomocą formularza kontaktowego.</p>
+                    <a href="mailto:rezerwacje.opole@gmail.com" class="contact__info-link">
+                    <i class='bx bx-envelope'></i>
+                        rezerwacje.opole@gmail.com
+                    </a>
+                    <a href="tel:+48 505 005 001" class="contact__info-link">
+                    <i class='bx bx-phone' ></i>
+                        +48 505 005 001
+                    </a>
+                </div>
                 <form action="" class="contact__form">
                     <div class="contact__form-row">
                         <div class="contact__form-field">
@@ -31,6 +43,5 @@
                    </div>
                 </form>
             </div>
-        </div>
     </div>
 </section>

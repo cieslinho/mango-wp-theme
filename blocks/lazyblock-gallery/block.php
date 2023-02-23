@@ -4,13 +4,9 @@
         <div class="gallery__boxes">
             <div class="gallery__box gallery__box-swiper swiper mySwiper">
     <div class="swiper-wrapper">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/kawalerski.jpg" alt="Galeria Zdjęć Mango Music Club" class="gallery__img swiper-slide">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/1.jpg" alt="Galeria Zdjęć Mango Music Club" class="gallery__img swiper-slide">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/2.jpg" alt="Galeria Zdjęć Mango Music Club" class="gallery__img swiper-slide">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/3.jpg" alt="Galeria Zdjęć Mango Music Club" class="gallery__img swiper-slide">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/5.jpg" alt="Galeria Zdjęć Mango Music Club" class="gallery__img swiper-slide">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/6.jpg" alt="Galeria Zdjęć Mango Music Club" class="gallery__img swiper-slide">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/7.jpg" alt="Galeria Zdjęć Mango Music Club" class="gallery__img swiper-slide">
+    <?php forEach( $attributes['images'] as $image) : ?>
+        <img src="<?php echo esc_url( $image['image']['url'] ); ?>" alt="<?php echo esc_attr( $image['image']['alt'] ); ?>" class="gallery__img swiper-slide">
+        <?php endforeach; ?>
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
