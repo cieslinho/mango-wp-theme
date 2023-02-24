@@ -1,0 +1,34 @@
+.wp-pagenavi {
+	align-self: center;
+	display: flex;
+	gap: 0.3em;
+
+	span,
+	a {
+		padding: 0.3em 0.6em;
+		background-color: $orange;
+		color: $black;
+		font-weight: 700;
+		border: none;
+	}
+
+	a {
+		&:hover {
+			border: none;
+			background-color: $snowy;
+			transition: 0.2s;
+		}
+	}
+
+	.pages {
+		background-color: $orange;
+		border: none;
+		font-weight: 700;
+		color: $black;
+	}
+
+	.current {
+		background-color: $snowy;
+		color: $black;
+	}
+}

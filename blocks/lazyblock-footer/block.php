@@ -15,6 +15,9 @@
                 <a href="https://www.instagram.com/mangoclubopole/" class="footer__socials-icon">
                     <i class='bx bxl-instagram'></i>
                 </a>
+                <a href="https://www.youtube.com/channel/UC55TNNgbz9Hc6fxJXoFfd2A" class="footer__socials-icon">
+                    <i class='bx bxl-youtube'></i>
+                </a>
             </div>
         </div>
         </div>

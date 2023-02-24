@@ -38,3 +38,33 @@ function mango_config(){
 
 add_action('after_setup_theme', 'mango_config', 0);
 add_theme_support( 'title-tag' );
+
+add_theme_support('post-thumbnails', array(
+  'post',
+  'page',
+  'custom-post-type-name',
+  ));
+
+  function change_excerpt($excerpt) {
+    return substr($excerpt, 0, 150) . '...';
+  }
+  
+  add_filter('the_excerpt', 'change_excerpt');
+
+  function trim_text($input, $length) {
+
+    // If the text is already shorter than the max length, then just return unedited text.
+    if (strlen($input) <= $length) {
+      return $input;
+    }
+    
+    // Find the last space (between words we're assuming) after the max length.
+    $last_space = strrpos(substr($input, 0, $length), ' ');
+    // Trim
+    $trimmed_text = substr($input, 0, $last_space);
+    // Add ellipsis.
+    $trimmed_text .= '...';
+    
+    return $trimmed_text;
+    }
+  

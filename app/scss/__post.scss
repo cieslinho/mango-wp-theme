@@ -1,0 +1,161 @@
+.post {
+	@include section-padding;
+	background-color: rgba($color: #000000, $alpha: 0.15);
+
+	margin-top: 70px;
+
+	&__boxes {
+		display: flex;
+		flex-direction: column;
+		background-color: rgba($color: black, $alpha: 0.6);
+	}
+
+	&__info {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 1em;
+		gap: 0.5em;
+	}
+
+	&__article {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__box {
+		padding: 1em;
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+
+		@include respond(desktop-small) {
+			display: grid;
+			grid-template-columns: 1fr 1.5fr;
+			grid-template-rows: 1fr;
+			grid-column-gap: 0px;
+			grid-row-gap: 0px;
+			gap: 2em;
+
+			&-left {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 2em;
+
+				i {
+					color: rgba($color: $orange, $alpha: 0.5);
+					font-size: 20rem;
+					transform: rotateY(20deg);
+				}
+			}
+		}
+	}
+
+	&__content {
+		background-color: rgba($color: $snowy, $alpha: 0.01);
+		border: 2px solid $orange;
+		padding: 1em;
+		color: $snowy;
+		p,
+		ul,
+		ol {
+			line-height: 150%;
+			margin-block: 0.5em;
+		}
+
+		p {
+			word-break: break-all;
+
+			@include respond(desktop-small) {
+				font-size: $tablet-text;
+			}
+		}
+		a {
+			color: $orange;
+			&:hover {
+				border-bottom: 1px solid $snowy;
+			}
+		}
+
+		ul,
+		ol {
+			margin-left: 0.5em;
+			li {
+				margin-left: 1em;
+				margin-block: 0.25em;
+			}
+		}
+	}
+
+	&__meta {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 1em;
+	}
+
+	&__tags {
+		display: flex;
+		gap: 0.5em;
+
+		a {
+			padding: 0.4em;
+			background-color: $orange;
+			font-weight: 700;
+			text-transform: uppercase;
+			color: $black;
+			transition: background-color 0.2s;
+			// border-radius: ;
+
+			&:hover {
+				background-color: $snowy;
+			}
+		}
+	}
+
+	&__category {
+		ul li {
+			list-style: none;
+		}
+
+		ul li a {
+			display: block;
+			padding: 0.5em;
+			background-color: $orange;
+			font-weight: 700;
+			text-transform: uppercase;
+			color: $black;
+			transition: background-color 0.2s;
+			// border-radius: ;
+
+			&:hover {
+				background-color: $snowy;
+			}
+		}
+	}
+
+	&__title {
+		text-transform: uppercase;
+		color: $snowy;
+		letter-spacing: 1px;
+		text-shadow: 0px 5px 5px rgb(0 0 0 / 80%);
+	}
+
+	&__date {
+		background-color: $orange;
+		// text-shadow: 0px 5px 5px rgb(0 0 0 / 80%);
+		padding: 0.5em;
+		letter-spacing: 1px;
+		font-weight: 700;
+		color: $black;
+		text-transform: uppercase;
+	}
+
+	&__thumbnail {
+		width: 100%;
+		object-fit: cover;
+		border: 2px solid $orange;
+		// aspect-ratio: 4/2.8;
+	}
+}

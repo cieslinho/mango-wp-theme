@@ -1,0 +1,116 @@
+.news {
+	@include section-padding;
+
+	margin-top: 70px;
+
+	&__boxes {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+		justify-content: center;
+	}
+
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		grid-template-rows: 1fr;
+		grid-column-gap: 0px;
+		grid-row-gap: 0px;
+		gap: 2em;
+
+		@include respond(tablet) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 2em;
+		}
+
+		@include respond(desktop-small) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	&__card {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		width: 100%;
+		min-height: 400px;
+		overflow: hidden;
+		box-shadow: 0px 0px 16px -5px rgba(0, 0, 0, 1);
+
+		&::after {
+			position: absolute;
+			content: '';
+			height: 100%;
+			width: 100%;
+			background-color: rgba($color: #000000, $alpha: 0.5);
+			transition: transform 0.5s;
+			border-bottom: 3px solid $orange;
+		}
+
+		&:hover::after {
+			transform: translateX(100%);
+		}
+
+		&:hover &-bottom {
+			transform: translateX(100%);
+		}
+
+		&:hover &-img {
+			transform: scale(1.05);
+			filter: grayscale(0);
+		}
+
+		&-img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			object-fit: cover;
+			transition: transform 0.2s, filter 0.2s;
+			filter: grayscale(1);
+		}
+
+		&-bottom {
+			z-index: 15;
+			padding: 1em;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 0.5em;
+			height: 100%;
+			transition: transform 0.5s;
+			text-align: center;
+		}
+
+		&-title {
+			text-transform: uppercase;
+			color: $snowy;
+			text-shadow: 0px 5px 5px rgb(0 0 0 / 80%);
+
+			@include respond(mobile) {
+				font-size: $desktop-text;
+			}
+
+			@include respond(tablet) {
+				font-size: $desktop-large-text;
+			}
+		}
+
+		&-date {
+			color: $orange;
+			font-weight: 700;
+			text-shadow: 0px 5px 5px rgb(0 0 0 / 80%);
+
+			@include respond(mobile) {
+				font-size: $tablet-text;
+			}
+
+			@include respond(tablet) {
+				font-size: $desktop-text;
+			}
+		}
+	}
+}

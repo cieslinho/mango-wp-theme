@@ -29,5 +29,4 @@
             </div>
             <?php endforeach; ?>
     </div>
-    <a href="/wydarzenia" class="featured-events__btn">zobacz więcej</a>
 </section>

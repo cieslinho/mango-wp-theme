@@ -1,0 +1,137 @@
+.scene {
+	@include section-padding;
+
+	&__cards {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+		grid-row-gap: 1.5em;
+	}
+
+	&__card {
+		padding: 1em;
+		width: 100%;
+		height: 250px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		position: relative;
+		box-shadow: 0px 0px 16px -5px rgb(0 0 0);
+		overflow: hidden;
+
+		&:after {
+			position: absolute;
+			content: '';
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba($color: $black, $alpha: 0.3);
+			transition: background-color 0.2s;
+			z-index: 15;
+		}
+		&:hover &-img {
+			transform: scale(1.02);
+		}
+
+		&:hover::after {
+			background-color: rgba($color: $black, $alpha: 0.1);
+		}
+
+		&-img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			left: 0;
+			top: 0;
+			z-index: 5;
+			transition: transform 0.2s;
+		}
+
+		&-texts {
+			z-index: 20;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.5em;
+			margin-bottom: 1em;
+
+			@include respond(desktop) {
+				gap: 0.8em;
+			}
+		}
+
+		&-title {
+			text-transform: uppercase;
+			color: $snowy;
+			text-shadow: 0px 5px 5px rgb(0 0 0 / 80%);
+			letter-spacing: 1px;
+			background-color: rgba($color: black, $alpha: 0.5);
+			padding: 0.25em;
+
+			@include respond(tablet) {
+				font-size: $desktop-text;
+			}
+
+			@include respond(desktop) {
+				font-size: 2.8rem;
+			}
+		}
+
+		&-date {
+			text-transform: uppercase;
+			text-shadow: 0px 5px 5px rgb(0 0 0 / 30%);
+			color: $snowy;
+			background-color: rgba($color: black, $alpha: 0.5);
+			padding: 0.25em;
+
+			@include respond(tablet) {
+				font-size: $tablet-text;
+			}
+
+			i {
+				color: $snowy;
+				margin-right: 0.25em;
+			}
+		}
+
+		&-btns {
+			z-index: 20;
+			display: flex;
+			gap: 0.5em;
+			letter-spacing: 1px;
+
+			@include respond(tablet) {
+				gap: 0.8em;
+			}
+		}
+
+		&-btn {
+			text-transform: uppercase;
+			padding: 0.4em 0.8em;
+			background-color: $orange;
+			// border: 2px solid transparent;
+			color: $black;
+			font-weight: 700;
+			border: 2px solid transparent;
+			transition: background-color 0.2s, color 0.2s;
+
+			&:hover {
+				background-color: $snowy;
+			}
+
+			&-facebook {
+				background-color: $black;
+				color: $snowy;
+				// border: 2px solid $snowy;
+
+				&:hover {
+					background-color: $snowy;
+					color: $black;
+					// border: 2px solid $snowy;
+				}
+			}
+		}
+	}
+}
