@@ -15,7 +15,7 @@
                     </div>
                     <img src="<?php echo esc_url( $event['image']['url'] ); ?>" alt="<?php echo esc_attr( $event['image']['alt'] ); ?> class="featured-events__card-img">
                     <div class="featured-events__card-bottom">
-                        <a href="<?php echo esc_url( $event['ticket'] ); ?>"class="featured-events__card-link">kup bilet</a>
+                        <a href="<?php echo esc_url( $event['ticket'] ); ?>"class="featured-events__card-link">zarezerwuj lożę</a>
                       <div class="featured-events__card-socials">
                         <a href="<?php echo esc_url( $event['facebook'] ); ?>" class="featured-events__card-btn">
                          <i class='bx bxl-facebook'></i>

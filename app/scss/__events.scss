@@ -82,6 +82,7 @@
 		&-bottom {
 			justify-content: space-between;
 			padding-block: 1.3em;
+			gap: 0.5em;
 		}
 
 		&-socials {
@@ -98,8 +99,17 @@
 			padding: 0.4em 0.8em;
 			font-weight: 700;
 			transition: background-color 0.2s, color 0.2s, border 0.2s;
+			text-align: center;
+
+			@include respond(tablet) {
+				font-size: 1.2rem;
+			}
 
 			@include respond(desktop-small) {
+				font-size: $mobile-text;
+			}
+
+			@include respond(desktop) {
 				font-size: $tablet-text;
 			}
 

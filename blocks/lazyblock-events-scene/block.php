@@ -1,6 +1,6 @@
 <section class="scene">
     <div class="container">
-        <h2 class="section-title"><span>koncerty</span></h2>
+        <h2 class="section-title"><span>koncerty / imprezy</span></h2>
         <div class="scene__cards">
         <?php forEach( $attributes['events-scene'] as $event) : ?>
             <div class="scene__card">
