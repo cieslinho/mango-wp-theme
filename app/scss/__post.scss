@@ -55,19 +55,20 @@
 	&__content {
 		background-color: rgba($color: $snowy, $alpha: 0.01);
 		border: 2px solid $orange;
-		padding: 1em;
+		padding: 0.5em;
 		color: $snowy;
 		p,
 		ul,
 		ol {
 			line-height: 150%;
 			// margin-block: 0.3em;
+			font-size: 1.4rem;
 		}
 
 		p {
-			word-break: break-all;
+			// word-break: break-all;
 
-			@include respond(desktop-small) {
+			@include respond(tablet) {
 				font-size: $tablet-text;
 			}
 		}
