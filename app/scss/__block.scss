@@ -1,0 +1,31 @@
+.block {
+	&__box {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 2em;
+		color: $snowy;
+		letter-spacing: 2px;
+		// line-height: 180%;
+
+		@include respond(tablet) {
+			flex-direction: row;
+			align-items: flex-start;
+
+			gap: 2em;
+		}
+	}
+
+	&__span {
+		border-bottom: 2px solid $orange;
+	}
+
+	&__mail {
+		color: $snowy;
+		border-bottom: 2px solid $orange;
+	}
+}

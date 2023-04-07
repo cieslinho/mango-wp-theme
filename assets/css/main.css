@@ -1610,6 +1610,33 @@ body {
   color: #191a19;
 }
 
+.block__box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2em;
+  color: #f4f4f4;
+  letter-spacing: 2px;
+}
+@media only screen and (min-width: 768px) {
+  .block__box {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2em;
+  }
+}
+.block__span {
+  border-bottom: 2px solid #f05233;
+}
+.block__mail {
+  color: #f4f4f4;
+  border-bottom: 2px solid #f05233;
+}
+
 .footer {
   padding: 1em 0;
 }

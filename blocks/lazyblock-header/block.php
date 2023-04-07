@@ -4,11 +4,11 @@
 <header class="header">
     <div class="header__boxes">
         <div class="header__box">
-            <video loop src="<?php echo esc_url( $attributes['club']['url'] ); ?>" class="header__video"></video>
+            <video autoplay loop muted playsinline type="video/mp4" src="<?php echo esc_url( $attributes['club']['url'] ); ?>" class="header__video"></video>
                 <a href="/klub" class="header__link">klub</a>
         </div>
         <div class="header__box">
-            <video loop src="<?php echo esc_url( $attributes['scene']['url'] ); ?>" class="header__video"></video>
+            <video autoplay loop muted playsinline type="video/mp4" src="<?php echo esc_url( $attributes['scene']['url'] ); ?>" class="header__video"></video>
             <a href="/koncerty" class="header__link">scena</a>
         </div>
     </div>
