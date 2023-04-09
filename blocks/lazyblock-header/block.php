@@ -9,7 +9,7 @@
         </div>
         <div class="header__box">
             <video autoplay loop muted playsinline type="video/mp4" src="<?php echo esc_url( $attributes['scene']['url'] ); ?>" class="header__video"></video>
-            <a href="/koncerty" class="header__link">scena</a>
+            <a href="/koncerty" class="header__link">koncerty</a>
         </div>
     </div>
 </header>
