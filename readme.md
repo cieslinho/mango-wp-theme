@@ -7,4 +7,3 @@
 <li>CSS (SCSS with Bem)</li>
 <li>JavaScript</li>
 <li>WordPress CMS (Custom Theme Development)</li>
-<li>WooCommerce</li>
